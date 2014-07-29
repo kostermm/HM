@@ -1,0 +1,4 @@
+HM
+==
+
+Highmaps code examples
