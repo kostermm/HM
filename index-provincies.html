@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+        <title>Highmaps POC Provincies</title>
+
+        <!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
+        <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css"></link>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/highmaps.js"></script>
+        <script type="text/javascript" src="js/modules/data.js"></script>
+        <script type="text/javascript" src="js/modules/exporting.js"></script>
+        <script type="text/javascript" src="nederland.js"></script>
+        <script type="text/javascript" src="data.js"></script>
+
+        <script type="text/javascript">
+            $(function () {
+                
+                // Initiate the chart
+                $('#container').highcharts('Map', {
+                    
+                    colors:[ 'rgba(255,0,0,0)'],
+                    
+                    title: {
+                        text: 'provincies 2014'
+                    },
+                    
+                    legend: {
+                        title: {
+                            text: 'Aantal inwoners'
+                        }
+                    },
+                    
+                    colorAxis: {
+                        min: 350000,
+                        max: 4000000
+                    },
+                    
+                    plotOptions: {
+                        map: {
+                            visible: true,
+                            borderWidth: 1
+                        }
+                    },
+                    
+                    mapNavigation: {
+                        enabled: false
+                    },
+                    
+                    tooltip: {
+                        headerFormat: '&lt;span style="font-size:10px"&gt;{series.name}&lt;/span&gt;&lt;br&gt;&lt;/br&gt;',
+                        pointFormat: '{point.name}:&lt;b&gt;{point.value} inwoners&lt;/b&gt;&lt;br&gt;&lt;/br&gt;',
+                        footerFormat: '&lt;span style="font-size:10px"&gt;Source: Wikipedia&lt;/span&gt;&lt;br&gt;&lt;/br&gt;'
+                    },
+                    
+                    /*chart: {
+                    plotBackgroundImage: "bg.jpg",
+                    },*/
+                    
+                    series:[ {
+                        data: Highcharts.maps.data,
+                        mapData: Highcharts.maps.nederland,
+                        joinBy: 'code',
+                        name: 'Bevolkingsdichtheid',
+                        states: {
+                            hover: {
+                                color: '#e17000'
+                            }
+                        }
+                    }]
+                });
+            });</script>
+    </head>
+    <body>
+        <h1>Highmaps POC VZP - Provincies</h1>
+        <div id="container" style="height: 500px; min-width: 310px; max-width: 500px; margin: 0 auto"></div>
+
+    </body>
+</html>

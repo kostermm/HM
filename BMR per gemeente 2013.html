@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>BMR - Highmaps POC</title>
+        <!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
+        <link rel="stylesheet" type="text/css"
+            href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css"/>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/highmaps.js"></script>
+        <script type="text/javascript" src="js/modules/data.js"></script>
+        <script type="text/javascript" src="js/modules/exporting.js"></script>
+        
+        <!-- maps -->
+        <!--<script type="text/javascript" src="nederland.js"></script>-->
+        
+        <!-- data -->
+        <!--<script type="text/javascript" src="data.js"></script>-->
+        <script type="text/javascript" src="RVP_2013_zuigelingen.json.js"></script>
+        <script type="text/javascript" src="data/Vacc2013_BMR_zuigelingen.js"></script>
+        <!-- Create map script -->
+        <script type="text/javascript" src="VZP-POC-BMR.js"></script>
+    </head>
+
+    <body style="position: relative">
+        <h1>Vaccinatiepercentage in meeste gemeenten boven 95%</h1>
+        <!--<div id="infobox" style="width: 420; height: auto; margin: 0 auto; border: 1px solid red"  >info</div>-->
+        
+        <!--  style="height: 500px; min-width: 310px; max-width: 500px; margin: 0 auto; border: 1px solid red"       -->
+        <div id="regio-chart" style="width: 300; height: auto; margin: 0 auto; border: 0px solid orange;  position: absolute; left: 550" ></div>
+        <div id="container" style="width: 500; height: 582; margin: 0 0; border: 0px solid red; left:0; position: relative"   />
+        
+    </body>
+
+</html>

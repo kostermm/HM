@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>	Fitnesscentra per provincie 2011 - Volksgezondheid en zorg</title>
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<script src="http://code.highcharts.com/2.2.4/modules/exporting.js"></script>
+<script src="nederland.js"></script>
+<script src="fitness.js"></script>
+		<script type="text/javascript">
+		$(function () {
+
+        // Initiate the chart
+        $('#container').highcharts('Map', {
+
+			//xAxis.minPadding: 0.10,
+			xAxis: {
+                min: -170,
+                max: 880,
+            },
+			
+			yAxis: {
+                min: -900,
+                max: -180,
+            },
+
+			colors: ['rgba(255,10,10,50)'],
+			
+			//margin: [100, 100, 100, 100],
+
+            title: {
+                text: ''
+            },
+            
+            legend: {
+				enabled: false
+			},
+            //    title: {
+            //        text: 'Aantal inwoners'
+            //   }
+            //},
+
+			//colorAxis: {
+            //    min: 350000,
+            //    max: 2000000,
+            //    type: 'logarithmic'
+            //},
+			
+			plotOptions: {
+				map: {
+					visible: true,
+					borderWidth: 0
+				}
+				
+			},
+
+			mapNavigation: {
+				enabled: false
+			},
+			
+            tooltip: {
+				useHTML: true,
+				headerFormat: '',
+                pointFormat: '<dl><dt>Provincie</dt><dd>{point.name}</dd><dt>Aantal fitnessbedrijven</dt><dd>{point.fitabs}</dd><dt>Aantal fitnessbedrijven per 100.000 inwoners</dt><dd>{point.fitrel}</dd></dl>'
+            },
+			
+			chart: { 
+				plotBackgroundImage: "o17677.png",
+			},
+		
+            series : [{
+                data : Highcharts.maps.data,
+                mapData: Highcharts.maps.nederland,
+                joinBy: 'code',
+                //name: 'Aantal fitnessbedrijven per 100.000 inwoners',
+                //states: {
+                //    hover: {
+                //        color: '#BADA55'
+                //    }
+                //}
+            }]
+        });
+});
+		</script>
+	</head>
+	<body>
+
+<div id="container" style="height: 533px; min-width: 310px; max-width: 500px; margin: 0 auto"></div>
+<div><p>Zie ook: <a href="http://www.zorgatlas.nl/thema-s/sporten-en-bewegen/sportaanbod/fitnesscentra-per-gemeente/">Fitnesscentra 2011</a></p>
+<p>Zie ook: <a href="fitness.htm">Demo</a></p></div>
+	</body>
+</html>

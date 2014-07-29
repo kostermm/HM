@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <filters directoryPatterns="" filePatterns=""
+            positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="VenZ-HM-POC.xpr">
+        <file name="AmbulanceStandplaatsen.geojson.js"/>
+        <file name="AmbulanceStandplaatsen.html"/>
+        <file name="AmbulanceStandplaatsen-AmbuStpl.geojson.js"/>
+        <file name="AmbuStpl_2013.json.js"/>
+        <file
+            name="file:/N:/projecten/VZP-Sites/Highmaps/Data/Vaccinatie/BMR_2013.csv"/>
+        <file name="gemeente_2013.geo.json.js"/>
+        <file
+            name="file:/N:/projecten/VZP-Sites/Highmaps/Data/Vaccinatie/RVP_13.csv"/>
+        <file name="VZP-POC.js"/>
+        <file name="VZP-POC-BMR.js"/>
+        <file name="VZP-POC-PuntLocatie.js"/>
+    </projectTree>
+</project>
